@@ -1,13 +1,25 @@
 # Converting Datavyu Data into Looking Times
-# Shari Liu
+# Shari Liu, last updated 9/23/2020
 
-library(tidyverse, lmer)
-wd <- "/Users/shariliu/Documents/HarvardLDS/Studies/LUMI/liu_materials/LUMI_Coding/Reliability/Daisy Datavyu"
+# This script takes as input a .csv file generated from Datavyu,
+# and calculates looking duration for each trial specified in the csv
 
-setwd(wd) ## change to your local directory!
-filename <- "LUMI2_STG_5-JS_DE.csv"
+#------- FILL IN ----------------
+# your working directory (i.e. where the csv lives on your computer)
+setwd("/Users/shariliu/Dropbox (MIT)/Research/Studies/Published_Studies/LUMI/")
 
-#-------
+# the filename you want to process
+filename <- "LUMIr_10-LA.csv"
+
+# Important: If you encounter issues, go to Packages > search dplyr > 
+# and uncheck and recheck the box next to dplyr. And double check your inputs.
+
+# Do you see an error message you don't understand? Try Googling it,
+# and then if you still have trouble, contact Shari.
+
+#------- DO NOT EDIT WITHOUT ASKING SHARI FIRST----------------
+library(tidyverse, dplyr)
+
 data <- read.csv(filename, header = TRUE)
 names(data) <- tolower(names(data))
 
